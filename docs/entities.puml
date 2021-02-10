@@ -1,7 +1,22 @@
 @startuml
 
-class User <<Пользователь>> {
+class User{
+    getUid()
+    getName()
+    getGroups()
+    hasGroup(groupName)
 }
 
+class PosixUser{
+    getGroups()
+}
+class UserFactory{
+    getCurrentUser()
+}
+class PosixUserFactory{
+    getCurrentUser() 
+}
+
+User  <|-- PosixUser
 
 @enduml
