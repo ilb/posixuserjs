@@ -13,10 +13,10 @@ class PosixUser{
 class UserFactory{
     getCurrentUser()
 }
-class PosixUserFactory{
+class PosixUserFactory {
     getCurrentUser() 
 }
 
 User  <|-- PosixUser
-
+UserFactory  <|-- PosixUserFactory
 @enduml
