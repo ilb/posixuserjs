@@ -1,7 +1,16 @@
-@startuml
+@startuml entities
 
-class User <<Пользователь>> {
+class User{
+    + uid
+    + name
+    - _groups
+    + hasGroup(groupName)
 }
 
+class UserFactory {
+    + getCurrentUser() : User
+}
+
+UserFactory - User : создает >
 
 @enduml
