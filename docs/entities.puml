@@ -3,14 +3,26 @@
 class User{
     + uid
     + name
-    - _groups
     + hasGroup(groupName)
 }
+
+note right of User::hasGroup
+  Метод проверяет наличие группы,
+  у пользователя используя [[https://www.npmjs.com/package/posix#posixgetgrnamgroup posixgetgrnamgroup]]
+end note
 
 class UserFactory {
     + getCurrentUser() : User
 }
 
 UserFactory - User : создает >
+
+class RuUser extends User{
+}
+
+note right of RuUser
+  Класс заполняет name, 
+  используя транслитерацию
+end note
 
 @enduml
