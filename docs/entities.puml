@@ -1,7 +1,7 @@
 @startuml entities
 
 class User{
-    + uid
+    + code
     + name
     + hasGroup(groupName)
 }

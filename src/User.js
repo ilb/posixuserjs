@@ -1,9 +1,9 @@
 import posix from 'posix';
 
 export default class User {
-  constructor(uid) {
-    this.uid = uid;
-    const entry = posix.getpwnam(uid);
+  constructor(code) {
+    this.code = code;
+    const entry = posix.getpwnam(code);
     this.name = entry.gecos;
   }
 
