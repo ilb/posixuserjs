@@ -2,13 +2,29 @@ import posix from 'posix';
 
 export default class User {
   constructor(code) {
-    this.code = code;
-    const entry = posix.getpwnam(code);
-    this.name = entry.gecos;
+    this.entry = posix.getpwnam(code);
   }
 
-  /*eslint no-unused-vars: ["error", { "args": "none" }]*/
   hasGroup(groupName) {
-    throw new Error('not implemented');
+    try {
+      const groupInfo = posix.getgrnam(groupName);
+
+      return groupInfo.members.indexOf(this.entry.name) !== -1;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  getName() {
+    return this.entry.name;
+  }
+
+  getDisplayName() {
+    const name = this.getName();
+    if (!this.entry.gecos || this.entry.gecos === name) {
+      return name;
+    }
+
+    return this.entry.gecos;
   }
 }

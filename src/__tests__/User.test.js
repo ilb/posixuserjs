@@ -1,17 +1,15 @@
 import User from '../User';
+import RuUser from '../RuUser.js';
 
 const root = new User('root');
-const user = new User(process.env.USER);
+const user = new RuUser('testuser1');
 
 test('root name is root', () => {
-  expect(root.name).toStrictEqual('root');
-});
-test('contains group', () => {
-  expect(user.hasGroup(process.env.USER)).toStrictEqual(true);
+  expect(root.getName()).toStrictEqual('root');
 });
 
-test('contains group users', () => {
-  expect(user.hasGroup('users')).toStrictEqual(true);
+test('contains group', () => {
+  expect(user.hasGroup('testgroup')).toStrictEqual(true);
 });
 
 test('not contains group nonexistent', () => {
