@@ -1,4 +1,4 @@
-import posix from 'posix';
+import posix from '@maximumquiet/posix';
 
 export default class User {
   constructor(code) {

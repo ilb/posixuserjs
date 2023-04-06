@@ -1,6 +1,6 @@
 {
   "name": "@ilb/posixuserjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,6 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "posix": "^4.2.0"
+    "@maximumquiet/posix": "^4.2.0"
   }
 }
