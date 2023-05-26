@@ -18,6 +18,6 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "@maximumquiet/posix": "^4.2.1"
+    "@maximumquiet/posix": "^4.2.2"
   }
 }
