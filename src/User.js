@@ -5,14 +5,16 @@ const debug = createDebug('posixuserjs');
 
 export default class User {
   constructor(code) {
+    debug('gathering user by getpwnam: %s', code);
     this.entry = posix.getpwnam(code);
-    debug('gathered user by getpwnam: %s', this.entry.name);
+    debug('gathered user by getpwnam, uid: %s', this.entry.uid);
   }
 
   hasGroup(groupName) {
     try {
+      debug('gathering group by getgrnam: %s', groupName);
       const groupInfo = posix.getgrnam(groupName);
-      debug('gathered group by getgrnam: %o,', {
+      debug('gathered group by getgrnam: %o', {
         name: groupInfo.name,
         members: groupInfo.members
       });
