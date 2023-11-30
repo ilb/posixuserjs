@@ -14,7 +14,7 @@ export default class User {
     try {
       debug('gathering group by getgrnam: %s', groupName);
       const groupInfo = posix.getgrnam(groupName);
-      debug('gathered group by getgrnam: %o', {
+      debug('gathered group by getgrnam: %j', {
         name: groupInfo.name,
         members: groupInfo.members
       });
